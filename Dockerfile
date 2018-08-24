@@ -3,6 +3,8 @@ MAINTAINER "Pongsak Prabparn" <pongsak@rebatemango.com>
 
 COPY ./blog /var/www/html/
 
+COPY ./blog/composer.json /var/www/html
+
 RUN echo $PATH
 
 RUN composer update
