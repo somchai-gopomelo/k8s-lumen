@@ -1,16 +1,11 @@
-FROM pongsak/centos-phpfpm-nginx:4.0
+FROM pongsak/centos-phpfpm-nginx-lumen:2.0
 MAINTAINER "Pongsak Prabparn" <pongsak@rebatemango.com>
-
-RUN composer global require "laravel/lumen-installer"
-
-COPY ./nginx/00-default /etc/nginx/conf.d/default.conf
 
 COPY ./blog /var/www/html/
 
-# Add laravel to PATH
-ENV PATH=$PATH:/root/.composer/vendor/bin
-
 RUN echo $PATH
+
+RUN composer update
 
 # Set the port to 80 
 EXPOSE 80
