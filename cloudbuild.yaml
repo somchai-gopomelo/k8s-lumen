@@ -2,3 +2,4 @@ steps:
     - name: 'gcr.io/cloud-builders/docker'
       args: ['build', '-t', 'gcr.io/rebatemango-dev/$REPO_NAME', '.']
 images: ['gcr.io/rebatemango-dev/$REPO_NAME']
+#test
