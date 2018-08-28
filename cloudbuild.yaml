@@ -4,6 +4,9 @@ steps:
         ['build', '-t', 'gcr.io/rebatemango-dev/k8s-lumen', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/rebatemango-dev/k8s-lumen']
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
+    args: ['-c', 'composer update']
   - name: 'gcr.io/cloud-builders/kubectl'
     args:
         - 'set'
