@@ -5,8 +5,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/rebatemango-dev/k8s-lumen']
   - name: 'gcr.io/cloud-builders/kubectl'
-    args: ['-c', 'kubectl get pods']
-  - name: 'gcr.io/cloud-builders/kubectl'
     args:
         - 'set'
         - 'image'
@@ -15,3 +13,5 @@ steps:
     env:
         - 'CLOUDSDK_COMPUTE_ZONE=asia-southeast1-b'
         - 'CLOUDSDK_CONTAINER_CLUSTER=rebate-cluster-dev'
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: ['-c', 'echo hello']
