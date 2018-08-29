@@ -3,6 +3,10 @@ MAINTAINER "Pongsak Prabparn" <pongsak@rebatemango.com>
 
 COPY ./blog /var/www/html/
 
+WORKDIR /var/www/html
+
+RUN composer install
+
 # Set the port to 80 
 EXPOSE 80
 
