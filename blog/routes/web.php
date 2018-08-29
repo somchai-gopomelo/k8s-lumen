@@ -12,5 +12,9 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'i am k8s, deployment dev';
+    return 'hello from Kubernetes';
+});
+
+$router->get('/gcp', function () use ($router) {
+    return 'hello 1st deployment';
 });
