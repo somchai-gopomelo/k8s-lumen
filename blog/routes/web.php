@@ -12,5 +12,5 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'Hello, Kubernetes Engine! deployment 2';
+    return 'i am k8s, deployment dev';
 });
