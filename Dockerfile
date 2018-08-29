@@ -5,7 +5,7 @@ COPY ./blog /var/www/html/
 
 WORKDIR /var/www/html
 
-RUN composer install
+RUN composer update
 
 # Set the port to 80 
 EXPOSE 80
