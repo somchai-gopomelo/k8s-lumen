@@ -13,3 +13,6 @@ EXPOSE 80
 # Executing supervisord
 CMD ["supervisord" , "-n"]
 
+# update composer
+CMD ["composer update"]
+
