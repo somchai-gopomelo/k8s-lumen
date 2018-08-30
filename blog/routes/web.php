@@ -12,7 +12,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'k8s build 1st';
+    return 'k8s build 1.0';
 });
 
 $router->get('/gcp', function () use ($router) {
