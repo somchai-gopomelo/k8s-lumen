@@ -5,14 +5,11 @@ COPY ./blog /var/www/html/
 
 WORKDIR /var/www/html
 
-RUN composer install
+RUN composer install --no-interaction
 
 # Set the port to 80 
 EXPOSE 80
 
 # Executing supervisord
 CMD ["supervisord" , "-n"]
-
-# update composer
-CMD ["composer update"]
 
