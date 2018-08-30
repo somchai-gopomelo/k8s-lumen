@@ -12,7 +12,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'hello from Kubernetes';
+    return 'k8s build 1st';
 });
 
 $router->get('/gcp', function () use ($router) {
