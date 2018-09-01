@@ -1,15 +1,18 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
-        ['build', '-t', 'gcr.io/rebatemango-dev/k8s-centos-phpfpm-nginx-lumen:2.0', '.']
+        ['build', '-t', 'gcr.io/rebatemango-dev/k8s-centos-phpfpm-nginx-lumen:latest', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/rebatemango-dev/k8s-centos-phpfpm-nginx-lumen:2.0']
+    args: ['push', 'gcr.io/rebatemango-dev/k8s-centos-phpfpm-nginx-lumen:latest']
   - name: 'gcr.io/cloud-builders/kubectl'
     args:
         - 'set'
         - 'image'
         - 'deployments/k8s-lumen1'
-        - 'k8s-lumen=gcr.io/rebatemango-dev/k8s-centos-phpfpm-nginx-lumen:2.0'
+        - 'k8s-lumen=gcr.io/rebatemango-dev/k8s-centos-phpfpm-nginx-lumen:latest'
+  - name: 'composer'
+    entrpoint: 'bash'
+    args: ['-c', 'composer update']
     env:
         - 'CLOUDSDK_COMPUTE_ZONE=asia-southeast1-b'
         - 'CLOUDSDK_CONTAINER_CLUSTER=rebate-cluster-dev'
