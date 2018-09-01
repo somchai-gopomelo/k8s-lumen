@@ -11,7 +11,7 @@ steps:
         - 'deployments/k8s-lumen1'
         - 'k8s-lumen=gcr.io/rebatemango-dev/k8s-centos-phpfpm-nginx-lumen:latest'
   - name: 'composer'
-    entrpoint: 'bash'
+    entrypoint: 'bash'
     args: ['-c', 'composer update']
     env:
         - 'CLOUDSDK_COMPUTE_ZONE=asia-southeast1-b'
