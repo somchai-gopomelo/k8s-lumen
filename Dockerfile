@@ -1,7 +1,3 @@
-FROM composer as composer
-COPY . /app
-RUN composer install --ignore-platform-reqs --no-scripts
-
 FROM pongsak/centos-phpfpm-nginx-lumen:2.0
 MAINTAINER "Pongsak Prabparn" <pongsak@rebatemango.com>
 
@@ -19,4 +15,5 @@ COPY --from=composer /app/vendor /var/www/html/vendor
 EXPOSE 80
 
 # Executing supervisord
-CMD ["/usr/bin/supervisord" && "bash", "-c", "composer update"]
+#CMD ["supervisord" , "-n" && "bash", "-c", "composer update"]
+CMD "/usr/bin/supervisord"; bash -c "composer install && php artisan";
