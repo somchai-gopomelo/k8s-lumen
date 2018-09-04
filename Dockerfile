@@ -13,4 +13,4 @@ RUN composer update
 EXPOSE 80
 
 # Executing supervisord
-CMD ["supervisord" , "-n" && "-c", "composer update"]
+CMD ["supervisord" , "-n" && "bash", "-c", "composer update"]
