@@ -1,9 +1,11 @@
 FROM pongsak/centos-phpfpm-nginx-lumen:2.0
 MAINTAINER "Pongsak Prabparn" <pongsak@rebatemango.com>
 
+WORKDIR /var/www/html
+
 COPY ./blog /var/www/html/
 
-WORKDIR /var/www/html
+RUN PWD
 
 RUN composer update
 
