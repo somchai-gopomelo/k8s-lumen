@@ -9,8 +9,6 @@ RUN echo "$PWD"
 
 RUN composer update
 
-COPY --from=composer /app/vendor /var/www/html/vendor
-
 # Set the port to 80 
 EXPOSE 80
 
