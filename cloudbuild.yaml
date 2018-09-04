@@ -1,6 +1,8 @@
 #stepsa
 steps:
   - name: 'gcr.io/cloud-builders/docker'
+    args: ['pull', 'gcr.io/$PROJECT_ID/k8s-centos-phpfpm-nginx-lumen:latest']
+  - name: 'gcr.io/cloud-builders/docker'
     args:
         ['build', '-t', 'gcr.io/$PROJECT_ID/k8s-centos-phpfpm-nginx-lumen:v1', '.']
   - name: 'gcr.io/cloud-builders/docker'
