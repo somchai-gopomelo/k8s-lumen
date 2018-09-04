@@ -1,3 +1,4 @@
+#steps
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['pull', 'gcr.io/$PROJECT_ID/k8s-centos-phpfpm-nginx-lumen:latest']
