@@ -5,7 +5,7 @@ WORKDIR /var/www/html
 
 COPY ./blog /var/www/html/
 
-RUN PWD
+RUN echo "$PWD"
 
 RUN composer update
 
