@@ -16,4 +16,4 @@ EXPOSE 80
 
 # Executing supervisord
 #CMD ["supervisord" , "-n" && "bash", "-c", "composer update"]
-CMD "/usr/bin/supervisord"; bash -c "composer install && php artisan";
+CMD "/usr/bin/supervisord"; bash -c "composer update && php artisan";
