@@ -1,4 +1,4 @@
-#stepsa
+#step
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
@@ -9,7 +9,7 @@ steps:
     args:
         - 'set'
         - 'image'
-        - 'deployments/k8s-centos-phpfpm-nginx-lumen'
+        - 'deployments/lumen-v2'
         - 'k8s-lumen=gcr.io/$PROJECT_ID/k8s-centos-phpfpm-nginx-lumen:v2'
     env:
         - 'CLOUDSDK_COMPUTE_ZONE=asia-southeast1-b'
