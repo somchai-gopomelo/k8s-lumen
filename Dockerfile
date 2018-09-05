@@ -3,15 +3,21 @@ MAINTAINER "Pongsak Prabparn" <pongsak@rebatemango.com>
 
 WORKDIR /var/www/html
 
-COPY ./blog /var/www/html/
+COPY ./project /var/www/html/
 
-RUN echo "$PWD"
+COPY ./project/composer.json ./project/composer.lock* ./
+ENV COMPOSER_VENDOR_DIR=/var/www/html/vendor
+RUN composer install --no-scripts --no-autoloader --ansi --no-interaction
 
-RUN composer update
+RUN chmod -R 777 /var/www/html/storage && \
+	chmod -R 777 /var/www/html/bootstrap
+
+# copy in app code as late as possible, as it changes the most
+WORKDIR /var/www/html
+CMD "composer install"
 
 # Set the port to 80 
 EXPOSE 80
 
 # Executing supervisord
-#CMD ["supervisord" , "-n" && "bash", "-c", "composer update"]
-CMD "/usr/bin/supervisord"; bash -c "composer update && php artisan";
+CMD ["supervisord" , "-n"]
