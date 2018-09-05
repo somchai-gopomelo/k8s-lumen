@@ -13,12 +13,14 @@ RUN chmod -R 777 /var/www/html/storage && \
 	chmod -R 777 /var/www/html/bootstrap
 
 # copy in app code as late as possible, as it changes the most
-# WORKDIR /var/www/html
-# RUN composer dump-autoload -o
-CMD "composer install"
+WORKDIR /var/www/html
+RUN composer dump-autoload -o
+
+# COPY ./project/vendor/ /var/www/html/
 
 # Set the port to 80 
 EXPOSE 80
 
 # Executing supervisord
 CMD ["supervisord" , "-n"]
+
