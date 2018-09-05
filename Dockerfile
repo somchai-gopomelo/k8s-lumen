@@ -14,7 +14,7 @@ RUN chmod -R 777 /var/www/html/storage && \
 
 # copy in app code as late as possible, as it changes the most
 WORKDIR /var/www/html
-CMD "composer install"
+RUN composer dump-autoload -o
 
 # Set the port to 80 
 EXPOSE 80
