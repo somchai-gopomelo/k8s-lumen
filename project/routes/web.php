@@ -12,9 +12,5 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'k8s build v2 bobobo00';
-});
-
-$router->get('/gcp', function () use ($router) {
-    return 'image v2 bobobo00';
+    return 'hello lumen';
 });
