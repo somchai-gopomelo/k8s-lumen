@@ -17,8 +17,7 @@ WORKDIR /var/www/html
 RUN composer update
 
 # Set the port to 80 
-EXPOSE 80
+EXPOSE 8080
 
 # Executing supervisord
 CMD ["supervisord" , "-n"]
-
