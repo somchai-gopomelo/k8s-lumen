@@ -16,7 +16,7 @@ RUN chmod -R 777 /var/www/html/storage && \
 WORKDIR /var/www/html
 RUN composer update
 
-# Set the port to 80 
+# Set the port 80 
 EXPOSE 80
 
 # Executing supervisord
