@@ -12,5 +12,5 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'hello lumen test auto deploy app version';
+    return 'test running';
 });
